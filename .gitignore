@@ -1,4 +1,5 @@
 media/
 __pycache__/
+verbatim_script/
 *.txt
 
