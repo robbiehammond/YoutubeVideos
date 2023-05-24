@@ -1,12 +1,5 @@
 from manim import *
 import random
-'''
-    TODO for tomorrow: Put deterministic points down, draw circles to show sets growing 
-
-'''
-
-
-
 
 class UnoptimizedUF(Scene):
 
