@@ -17,9 +17,9 @@ class Name(Scene):
 
         self.wait(1)
 
-        union_func_arrow = Arrow(start = LEFT + .75 * UP, end = 3.5 * LEFT + 1.5 * DOWN, stroke_width = 3)
-        union_func = Tex(r"$Union(A, B) \rightarrow Do\ (setA \cup setB)$", font_size=36).shift(3.5 * LEFT + 2 * DOWN)
-        union_func2 = Tex(r"$Union(A, A) \rightarrow Do\ Nothing$", font_size=36).shift(3.5 * LEFT + 2.75 * DOWN)
+        union_func_arrow = Arrow(start = LEFT + .75 * UP, end = 3 * LEFT + 1.5 * DOWN, stroke_width = 3)
+        union_func = Tex(r"$Union(A, B) \rightarrow Do\ (setA \cup setB)$", font_size=36).shift(4 * LEFT + 2 * DOWN)
+        union_func2 = Tex(r"$Union(A, A) \rightarrow Do\ Nothing$", font_size=36).shift(4 * LEFT + 2.75 * DOWN)
 
         self.play(Create(union_func), Create(union_func_arrow))
         self.wait(2)
@@ -27,9 +27,8 @@ class Name(Scene):
 
         self.wait(2)
 
-        find_func = Tex(r"$Find(A) \rightarrow Return\ root\ of\ setA$", font_size=36).shift(3.5 * RIGHT + 2.35 * DOWN)
-        self.play(Create(find_func))
+        find_func = Tex(r"$Find(A) \rightarrow Return\ representative\ of\ setA$", font_size=36).shift(3 * RIGHT + 2.35 * DOWN)
+        find_func_arrow = Arrow(start = RIGHT + .75 * UP, end = 3 * RIGHT + 2 * DOWN, stroke_width = 3)
+        self.play(Create(find_func), Create(find_func_arrow))
 
         self.wait(2)
-
-        
