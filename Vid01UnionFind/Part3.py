@@ -1,8 +1,5 @@
 from manim import * 
 
-'''
-    Next: Record Voice Lines! Gotta get timing right.
-'''
 class BigGraph(Scene):
     def construct(self):
         element_ring = Circle(radius=3.5)
