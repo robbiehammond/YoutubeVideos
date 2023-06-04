@@ -2,6 +2,7 @@ from manim import *
 
 class Assumptions(Scene):
     def construct(self):
+        self.wait(2)
         prs = Tex('Prerequisites', font_size=72).shift(3 * UP)
         self.play(Create(prs))
         s = r'''
@@ -15,6 +16,7 @@ class Assumptions(Scene):
         '''
         prereqs = Tex(s).shift(UP)
         self.play(Create(prereqs))
+        self.wait(5)
 
 
         niceToKnow = Tex('Helpful to Know', font_size=72).shift(DOWN)
@@ -31,6 +33,4 @@ class Assumptions(Scene):
         self.play(Create(toKnows))
 
 
-
-
-        self.wait(1)
+        self.wait(8)

@@ -4,6 +4,7 @@ import random
 class UnoptimizedUF(Scene):
 
     def construct(self):
+        self.wait(3)
         element_ring = Circle(radius=3.5)
         self.play(Create(element_ring))
         points = [(-1.5, -1.5), (1.5, 1.5), (-1.5, 1.5), (1.5, -1.5)]
@@ -35,8 +36,10 @@ class UnoptimizedUF(Scene):
 
         self.play(Create(merge))
 
-        self.play(FadeOut(c1), FadeOut(c4))
-        self.play(Create(e1), FadeOut(merge))
+        #self.play(FadeOut(c1), FadeOut(c4))
+        self.play(FadeOut(c4))
+        self.play(ReplacementTransform(c1, e1))
+        self.play(FadeOut(merge))
 
         self.wait(4)
 

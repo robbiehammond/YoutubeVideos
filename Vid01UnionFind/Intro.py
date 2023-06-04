@@ -2,11 +2,13 @@ from manim import *
 
 class Intro(Scene):
     def construct(self):
+        self.wait(0.5)
         codeforces = ImageMobject('img/code-forces.png')
         codeforces.scale(0.75)
         leetcode = ImageMobject('img/Leetcode_logo_rvs')
         leetcode.scale(0.75)
         self.play(FadeIn(codeforces), codeforces.animate.shift(3 * LEFT))
+        self.wait(1.25)
         self.play(FadeIn(leetcode), leetcode.animate.shift(3 * RIGHT))
 
         self.wait(2)
@@ -16,4 +18,4 @@ class Intro(Scene):
         self.play(Create(union), Create(find))
 
 
-        self.wait(1)
+        self.wait(15)

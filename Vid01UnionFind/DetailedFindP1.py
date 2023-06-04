@@ -2,6 +2,7 @@ from manim import *
 
 class DetailedFind(Scene):
     def construct(self):
+        self.wait(7)
         Find = Tex(r'Find $\rightarrow$ Get Representative Of Subset', font_size = 48)
         self.play(Create(Find))
         self.wait(0.5)
@@ -25,14 +26,21 @@ class DetailedFind(Scene):
         self.wait(2)
         self.play(dots[2].animate.set_stroke(RED, width=3), dots[1].animate.set_stroke(RED, width=3), dots[3].animate.set_stroke(RED, width=3))
 
+        findDef = Tex(r'R is the Representative of subset S $\Leftrightarrow$ $\forall N \in S, Find(N) = R$').shift(3.5 * DOWN)
+        self.wait(10)
+        self.play(Create(findDef))
+        self.wait(6)
+        self.play(FadeOut(findDef))
 
         self.wait(2)
 
         Find0 = Tex(r'$Find(0) = 3$', font_size = 48).shift(2.5 * DOWN + 4.5 * RIGHT)
         self.play(Create(Find0))
-        self.wait(2)
+        self.wait(3)
         Find3 = Tex(r'$Find(3) = 3$', font_size = 48).shift(3.25 * DOWN + 4.5 * RIGHT)
         self.play(Create(Find3))
 
+        self.wait(8)
+        self.play(Uncreate(e1), Uncreate(c2), Uncreate(c3), Uncreate(element_ring), Uncreate(dots[0]), Uncreate(dots[1]), Uncreate(dots[2]), Uncreate(dots[3]), Uncreate(Find0), Uncreate(Find3), Uncreate(Find))
         self.wait(1)
         
