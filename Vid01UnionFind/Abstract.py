@@ -15,7 +15,7 @@ class UnoptimizedUF(Scene):
             anims.append(Create(dots[i]))
         self.play(*anims)
 
-        self.wait(2)
+        self.wait(3)
 
         # ------------------------------------------ # 
         c1 = Circle(radius=0.5, color=WHITE).move_to([-1.5, -1.5, 0])
@@ -32,7 +32,7 @@ class UnoptimizedUF(Scene):
 
         self.wait(4)
 
-        merge = Tex('Merge nodes 0 and 3', font_size = 32).shift(3.25 * DOWN, 4.75 * RIGHT)
+        merge = Tex('Merge elements 0 and 3', font_size = 32).shift(3.25 * DOWN, 4.75 * RIGHT)
 
         self.play(Create(merge))
 
@@ -41,14 +41,14 @@ class UnoptimizedUF(Scene):
         self.play(ReplacementTransform(c1, e1))
         self.play(FadeOut(merge))
 
-        self.wait(4)
+        self.wait(12)
 
-        sameSet = Tex('Are nodes 0 and 3 in the same set?', font_size = 32).shift(3.25 * DOWN, 4.25 * RIGHT)
+        sameSet = Tex('Are 0 and 3 in the same set?', font_size = 32).shift(3.25 * DOWN, 4.25 * RIGHT)
         yes = Tex('Yes', font_size= 32, color=RED).shift(3.75 * DOWN, 4.5 * RIGHT)
         self.play(Create(sameSet))
         self.play(Create(yes))
 
-
-
         self.wait(1)
-
+        self.play(
+            *[FadeOut(mob)for mob in self.mobjects]
+        )

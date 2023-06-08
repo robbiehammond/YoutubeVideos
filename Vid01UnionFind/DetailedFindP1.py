@@ -40,7 +40,7 @@ class DetailedFind(Scene):
         Find3 = Tex(r'$Find(3) = 3$', font_size = 48).shift(3.25 * DOWN + 4.5 * RIGHT)
         self.play(Create(Find3))
 
-        self.wait(8)
+        self.wait(5)
         self.play(Uncreate(e1), Uncreate(c2), Uncreate(c3), Uncreate(element_ring), Uncreate(dots[0]), Uncreate(dots[1]), Uncreate(dots[2]), Uncreate(dots[3]), Uncreate(Find0), Uncreate(Find3), Uncreate(Find))
         self.wait(1)
         

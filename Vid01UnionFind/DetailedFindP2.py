@@ -6,30 +6,30 @@ class DetailedFind(Scene):
         edges = []
         lt = {0: [-2, 1, 0], 1: [0, 0, 0], 2: [2, -2, 0]}
         g = Graph(vertices, edges, labels=True, layout=lt, layout_scale=3,)
+        self.wait(3)
         self.play(Create(g))
-        self.wait(2)
+        self.wait(8)
         self.play(g.animate.add_edges(*[(1, 0)]), run_time = 0.5)
-        self.wait(1)
+        self.wait(1.5)
         self.play(g.animate.remove_edges(*[(1, 0)]), run_time = 0.5)
-        self.wait(2)
 
         
         self.play(g.animate.add_vertices(*[3, 4, 5], positions={3: [0.5, -2, 0], 4: [-0.5, -2, 0], 5: [-0.5, -3, 0]} ,labels=True))
         self.play(g.animate.add_edges(*[(3, 1), (4, 1), (5, 4)]))
-        self.wait(1)
+        self.wait(1.5)
         self.play(g.animate.remove_edges(*[(3, 1), (4, 1), (5, 4)]))
         self.play(g.animate.remove_vertices(*[3, 4, 5]))
-        self.wait(1)
+        self.wait(18)
 
         self.play(*(g[i].animate.set_stroke(RED, width=3) for i in range(3)))
 
-        self.wait(1)
+        self.wait(3)
 
 
         self.play(g.animate.add_edges(*[(1, 0)]), g[1].animate.set_stroke(WHITE, width=0), run_time=0.75)
         self.play(g.animate.add_edges(*[(2, 1)]), g[2].animate.set_stroke(WHITE, width=0), run_time=0.75)
 
-        self.wait(2)
+        self.wait(8)
 
         self.play(g.animate.shift(4 * LEFT))
 
@@ -74,4 +74,5 @@ Find(a) -> Element {
                                     font="Monospace")
         self.play(FadeIn(rendered_code))
 
-        self.wait(5)
+        self.wait(7)
+        self.play(FadeOut(rendered_code))

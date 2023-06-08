@@ -27,7 +27,7 @@ class BigGraph(Scene):
         self.play(Create(c1), Create(c2), Create(e1))
 
         self.wait(1)
-        sameSet = Tex('Are nodes 0 and 2 in the same set?', font_size = 32).shift(3.25 * DOWN, 4.25 * RIGHT)
+        sameSet = Tex('Are 0 and 2 in the same set?', font_size = 32).shift(3.25 * DOWN, 4.25 * RIGHT)
         yes = Tex('No', font_size= 32, color=RED).shift(3.75 * DOWN, 4.5 * RIGHT)
         self.play(Create(sameSet))
         self.wait(1)
@@ -60,7 +60,7 @@ class BigGraph(Scene):
         self.play(FadeOut(e1), ReplacementTransform(c2, l), run_time=2)
         #self.play(Create(c1))
 
-        sameSet = Tex('Are nodes 0 and 2 in the same set?', font_size = 32).shift(3.25 * DOWN, 4.25 * RIGHT)
+        sameSet = Tex('Are 0 and 2 in the same set?', font_size = 32).shift(3.25 * DOWN, 4.25 * RIGHT)
         yes = Tex('Still No', font_size= 32, color=RED).shift(3.75 * DOWN, 4 * RIGHT)
         self.play(Create(sameSet))
         self.wait(1)

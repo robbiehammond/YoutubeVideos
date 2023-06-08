@@ -2,6 +2,7 @@ from manim import *
 
 class UnionByRank(Scene):
     def construct(self):
+        self.wait(1)
         vertices = [0, 1, 2, 3]
         edges = [(1, 0), (2, 0)]
         lt = {0: [0, 1, 0], 1: [-1, 0, 0], 2: [-2, -1, 0], 3: [2, 1, 0]}
@@ -38,6 +39,8 @@ class UnionByRank(Scene):
         self.play(g.animate.add_edges(*[(3, 0)]))
         self.play(g[3].animate.set_stroke(WHITE, width=0))
         self.play(ReplacementTransform(union, unionRep2))
-
-
         self.wait(1)
+        self.play(FadeOut(g), FadeOut(union), FadeOut(unionRep2))
+
+
+        self.wait(3)
